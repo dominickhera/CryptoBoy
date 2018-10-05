@@ -46,7 +46,7 @@ class App extends Component {
           <tr>
             <th scope="row">{i}</th>
             <td>{name} ({symbol})</td>
-            <td>${price}/{symbol}</td>
+            <td>${price} / {symbol}</td>
           </tr>
       )
     }
@@ -95,6 +95,11 @@ class App extends Component {
           </tr>
         </thead>
         <tbody>
+        <tr>
+            <th scope="row">ddd</th>
+            <td>d</td>
+            <td>$</td>
+          </tr>
           { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)}
         </tbody>
       </Table>
