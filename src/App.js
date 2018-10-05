@@ -44,7 +44,7 @@ class App extends Component {
       console.log(crypto);
       return (
           <tr>
-            <th scope="row">{i + 1}</th>
+            <th scope="row">{rank}</th>
             <td>{name} ({symbol})</td>
             <td>${price} / {symbol}</td>
           </tr>
@@ -85,7 +85,7 @@ class App extends Component {
                                     </Button>
                                 </p> */}
 
-                                  <Table hover>
+                                  <table id="table_id" class="display">
         <thead> 
           <tr>
             <th>Rank</th>
@@ -102,7 +102,7 @@ class App extends Component {
           </tr> */}
           { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)}
         </tbody>
-      </Table>
+      </table>
                                 {/* </p> */}
                             </Col>
                         </Row>
