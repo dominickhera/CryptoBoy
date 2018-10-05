@@ -2,7 +2,7 @@ const request = require('axios');
 
 export function getCryptoRankings() {
         request
-        .get('https://api.coinmarketcap.com/v2/ticker/?limit=10&sort=rank', {crossdomain: true})
+        .get('https://api.coinmarketcap.com/v2/ticker/?limit=10&sort=id', {crossdomain: true})
         .then(function (response) {
             console.log(response.data.data);
             var cryptoData = {};
