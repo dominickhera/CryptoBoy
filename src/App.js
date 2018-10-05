@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getCryptoRankings, getSearchResults } from './dataGrab';
+import { getCryptoRankings, getSearchResults, SearchExtension } from './dataGrab';
 import Omnibar from 'omnibar';
 // import Foo from './Foo';
 // import Bar from './Bar';
@@ -79,7 +79,7 @@ class App extends Component {
                         <Row>
                             <Col>
                                 <h1>Welcome to Crypto Boy</h1>
-                                <Omnibar placeholder="Enter keyword" extensions={[getSearchResults]} />
+                                <Omnibar placeholder="Enter keyword" extensions={[SearchExtension]} />
                                 {/* <p>
                                     <Button
                                         tag="a"
@@ -104,12 +104,12 @@ class App extends Component {
           </tr>
         </thead>
         <tbody>
-        {/* <tr> */}
-            {/* <th scope="row">ddd</th>
-            <td>d</td>
-            <td>$</td>
-          </tr> */}
-          { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)}
+         <tr>
+             <th scope="row"></th>
+            <td></td>
+            <td></td>
+          </tr>
+          {/* { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)} */}
         </tbody>
       </Table>
                                 {/* </p> */}
