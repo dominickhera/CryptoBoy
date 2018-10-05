@@ -35,9 +35,21 @@ class App extends Component {
         });
     }
 
-      componentDidMount() {
-       getCryptoRankings(); 
-      }
+    componentDidMount() {
+      getCryptoRankings(); 
+    }
+
+    _renderTableRow(crypto, i) {
+      const {name, symbol, price, rank, percent_change_1hr, percent_change_24hr, percent_change_7d } = crypto;
+      console.log(crypto);
+      return (
+          <tr>
+            <th scope="row">{i}</th>
+            <td>{name} ({symbol})</td>
+            <td>${price}/{symbol}</td>
+          </tr>
+      )
+    }
     
     render() {
         return (
@@ -83,66 +95,7 @@ class App extends Component {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            {/* <td>@mdo</td> */}
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            {/* <td>@fat</td> */}
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            {/* <td>@twitter</td> */}
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            {/* <td>@twitter</td> */}
-          </tr>
-          <tr>
-            <th scope="row">5</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            {/* <td>@twitter</td> */}
-          </tr>
-          <tr>
-            <th scope="row">6</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            {/* <td>@twitter</td> */}
-          </tr>
-          <tr>
-            <th scope="row">7</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            {/* <td>@twitter</td> */}
-          </tr>
-          <tr>
-            <th scope="row">8</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            {/* <td>@twitter</td> */}
-          </tr>
-          <tr>
-            <th scope="row">9</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            {/* <td>@twitter</td> */}
-          </tr>
-          <tr>
-            <th scope="row">10</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            {/* <td>@twitter</td> */}
-          </tr>
+          { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)}
         </tbody>
       </Table>
                                 {/* </p> */}

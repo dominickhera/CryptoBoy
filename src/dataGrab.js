@@ -1,52 +1,37 @@
 const request = require('axios');
 
 export function getCryptoRankings() {
-
         request
         .get('https://api.coinmarketcap.com/v2/ticker/?limit=10&sort=rank', {crossdomain: true})
         .then(function (response) {
             console.log(response.data.data);
+            var cryptoData = {};
+            var cryptoInfo = [];
+            cryptoData.cryptoInfo = cryptoInfo;
+            var i;
+            for(i = 0; i < 10; i++) {
+                var name = response.data.data[i].name;
+                var symbol = response.data.data[i].symbol;
+                var rank = response.data.data[i].rank;
+                var price = response.data.data[i].quotes.USD.price;
+                var percent_change_1hr = response.data.data[i].quotes.USD.percent_change_1hr;
+                var percent_change_7d = response.data.data[i].quotes.USD.percent_change_7d;
+                var percent_change_24hr = response.data.data[i].quotes.USD.percent_change_24hr;
+                
+                var detailedCryptoInfo = {
+                    "name": name,
+                    "symbol": symbol,
+                    "rank": rank,
+                    "price": price,
+                    "percent_change_1hr": percent_change_1hr,
+                    "percent_change_7d": percent_change_7d,
+                    "percent_change_24hr": percent_change_24hr
+                }
+                cryptoData.cryptoInfo.push(detailedCryptoInfo);
+            }
+            localStorage.setItem("cryptoData", JSON.stringify(cryptoData));
         })
         .catch(function (error) {
             console.log(error);
         })
-        
-//         .set('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT')
-//         .set('Access-Control-Allow-Origin', '*')
-//         // .set('Connection', 'closed')s
-//         .set('Content-Type', 'application/json')
-//         .end((err, res) => {
-//            var parser = new DOMParser();
-//            console.log(res);
-//         //    var parsedObj = parser.parseFromString(res.text, "text/json");
-//         //    var busCount = parseInt(parsedObj.getElementsByTagName("data").length, 10);
-//            var cryptoData = {};
-//            var cryptoInfo = [];
-//         //    var coordinates = {};
-//         //    busInfo.coordinates = coordinates;
-//            cryptoData.cryptoInfo = cryptoInfo;
-
-//            var i;
-//             // for(i = 0; i < 10; i++) {
-//             // //   var busNumber = parsedObj.getElementsByTagName("Bus")[i].childNodes[0].textContent;
-//             //   var cryptoName = parsedObj.getElementsByTagName("name")[i].childNodes[1].textContent;
-//             //   var cryptoSymbol = parsedObj.getElementsByTagName("symbol")[i].childNodes[2].textContent;
-//             // //   var cryptoPrice = parsedObj.getElementsByTagName("Bus")[i].childNodes[7].textContent;
-//             // //   var busDestination = parsedObj.getElementsByTagName("Bus")[i].childNodes[4].textContent;
-//             // //   var busDirection = parsedObj.getElementsByTagName("Bus")[i].childNodes[3].textContent;
-//             // //   var busCoordinates = [
-//             //     // Number(busLattitude),
-//             //     // Number(busLongitude)
-//             // //   ]
-//             //   var detailedCryptoInfo = {
-//             //     "name": cryptoName,
-//             //     "symbol": cryptoSymbol
-//             //     // "direction": busDirection,
-//             //     // "coordinates": busCoordinates
-//             //   }
-//             //   cryptoData.cryptoInfo.push(detailedCryptoInfo);
-//             // }
-
-//             // localStorage.setItem("cryptoData", JSON.stringify(cryptoData));
-//         });
   }
