@@ -59,12 +59,12 @@ class App extends Component {
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
-                            <NavItem>
+                            {/* <NavItem>
                                 <NavLink href="/components/">Components</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
-                            </NavItem>
+                            </NavItem> */}
                         </Nav>
                     </Collapse>
                 </Navbar>
@@ -72,8 +72,8 @@ class App extends Component {
                     <Container>
                         <Row>
                             <Col>
-                                <h1>Welcome to React</h1>
-                                <p>
+                                <h1>Welcome to Crypto Boy</h1>
+                                {/* <p>
                                     <Button
                                         tag="a"
                                         color="success"
@@ -83,7 +83,7 @@ class App extends Component {
                                     >
                                         View Reactstrap Docs
                                     </Button>
-                                </p>
+                                </p> */}
 
                                   <Table hover>
         <thead> 
@@ -95,11 +95,11 @@ class App extends Component {
           </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">ddd</th>
+        {/* <tr> */}
+            {/* <th scope="row">ddd</th>
             <td>d</td>
             <td>$</td>
-          </tr>
+          </tr> */}
           { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)}
         </tbody>
       </Table>
