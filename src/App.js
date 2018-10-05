@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { getCryptoRankings, getSearchResults } from './dataGrab';
 import Omnibar from 'omnibar';
-import Foo from './Foo';
-import Bar from './Bar';
+// import Foo from './Foo';
+// import Bar from './Bar';
 import {
     Collapse,
     Navbar,
@@ -79,7 +79,7 @@ class App extends Component {
                         <Row>
                             <Col>
                                 <h1>Welcome to Crypto Boy</h1>
-                                <Omnibar placeholder="Enter keyword" extensions={[Foo, Bar, getSearchResults]} />
+                                <Omnibar placeholder="Enter keyword" extensions={[getSearchResults]} />
                                 {/* <p>
                                     <Button
                                         tag="a"
