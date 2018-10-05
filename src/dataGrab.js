@@ -2,24 +2,25 @@ const request = require('axios');
 
 export function getCryptoRankings() {
         request
-        .get('https://api.coinmarketcap.com/v2/ticker/?limit=10&sort=rank', {crossdomain: true})
+        .get('https://api.coinmarketcap.com/v2/ticker/?sort=rank', {crossdomain: true})
         .then(function (response) {
             console.log(response.data.data);
             var cryptoData = {};
             var cryptoInfo = [];
-            var shitWorkAround = [1,2,52,328,512,825,1027,1765,1831,2010];
+            let listLength = response.data.data.length;
+            // var shitWorkAround = [1,2,52,328,512,825,1027,1765,1831,2010];
             cryptoData.cryptoInfo = cryptoInfo;
             var i;
-            for(i = 0; i < 10; i++) {
+            for(i = 1; i < listLength; i++) {
             // for(object in response.data.data) {
                 // console.log(object);
-                var name = response.data.data[shitWorkAround[i]].name;
-                var symbol = response.data.data[shitWorkAround[i]].symbol;
-                var rank = response.data.data[shitWorkAround[i]].rank;
-                var price = response.data.data[shitWorkAround[i]].quotes.USD.price;
-                var percent_change_1hr = response.data.data[shitWorkAround[i]].quotes.USD.percent_change_1h;
-                var percent_change_7d = response.data.data[shitWorkAround[i]].quotes.USD.percent_change_7d;
-                var percent_change_24hr = response.data.data[shitWorkAround[i]].quotes.USD.percent_change_24h;
+                var name = response.data.data[i].name;
+                var symbol = response.data.data[i].symbol;
+                var rank = response.data.data[i].rank;
+                var price = response.data.data[i].quotes.USD.price;
+                var percent_change_1hr = response.data.data[i].quotes.USD.percent_change_1h;
+                var percent_change_7d = response.data.data[i].quotes.USD.percent_change_7d;
+                var percent_change_24hr = response.data.data[i].quotes.USD.percent_change_24h;
                 
                 var detailedCryptoInfo = {
                     "name": name,
@@ -32,10 +33,22 @@ export function getCryptoRankings() {
                 }
                 cryptoData.cryptoInfo.push(detailedCryptoInfo);
             }
-            // console.log(cryptoData);
+            console.log(cryptoData);
             localStorage.setItem("cryptoData", JSON.stringify(cryptoData));
         })
         .catch(function (error) {
             console.log(error);
         })
+  }
+
+ export function renderArrayItem(crypto, i) {
+    const {name, symbol, price, rank, percent_change_1h, percent_change_24h, percent_change_7d } = crypto;
+    console.log(crypto);
+    return (
+        { title: {name}, url: {symbol} }
+    );
+  }
+
+  export function getSearchResults() {
+    return [{}]
   }

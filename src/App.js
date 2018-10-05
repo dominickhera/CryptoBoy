@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { getCryptoRankings } from './dataGrab';
+import { getCryptoRankings, getSearchResults } from './dataGrab';
+import Omnibar from 'omnibar';
+import Foo from './Foo';
+import Bar from './Bar';
 import {
     Collapse,
     Navbar,
@@ -76,6 +79,7 @@ class App extends Component {
                         <Row>
                             <Col>
                                 <h1>Welcome to Crypto Boy</h1>
+                                <Omnibar placeholder="Enter keyword" extensions={[Foo, Bar, getSearchResults]} />
                                 {/* <p>
                                     <Button
                                         tag="a"
@@ -100,11 +104,11 @@ class App extends Component {
           </tr>
         </thead>
         <tbody>
-         <tr> 
-             <th scope="row"></th>
-            <td></td>
-            <td></td>
-          </tr>
+        {/* <tr> */}
+            {/* <th scope="row">ddd</th>
+            <td>d</td>
+            <td>$</td>
+          </tr> */}
           { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)}
         </tbody>
       </Table>
