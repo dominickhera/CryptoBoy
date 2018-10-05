@@ -103,14 +103,17 @@ class App extends Component {
           { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)}
         </tbody>
       </table>
+      <canvas class="flot-overlay" width="994" height="800" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 497px; height: 400px;"></canvas>
                                 {/* </p> */}
                             </Col>
                         </Row>
                     </Container>
                 </Jumbotron>
             </div>
+            
         );
     }
 }
+
 
 export default App;
