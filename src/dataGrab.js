@@ -4,7 +4,7 @@ export function getCryptoRankings() {
         request
         .get('https://api.coinmarketcap.com/v2/ticker/?limit=10&sort=rank', {crossdomain: true})
         .then(function (response) {
-            console.log(response.data.data[0]);
+            console.log(response.data.data["name"]);
             var cryptoData = {};
             var cryptoInfo = [];
             cryptoData.cryptoInfo = cryptoInfo;
