@@ -9,27 +9,29 @@ export function getCryptoRankings() {
             var cryptoInfo = [];
             cryptoData.cryptoInfo = cryptoInfo;
             var i;
-            for(i = 0; i < 10; i++) {
-                var name = response.data.data[i].name;
-                var symbol = response.data.data[i].symbol;
-                var rank = response.data.data[i].rank;
-                var price = response.data.data[i].quotes.USD.price;
-                var percent_change_1hr = response.data.data[i].quotes.USD.percent_change_1hr;
-                var percent_change_7d = response.data.data[i].quotes.USD.percent_change_7d;
-                var percent_change_24hr = response.data.data[i].quotes.USD.percent_change_24hr;
+            // for(i = 0; i < 10; i++) {
+            for(item in response.data.data) {
+                console.log(item);
+                // var name = response.data.data[i].name;
+                // var symbol = response.data.data[i].symbol;
+                // var rank = response.data.data[i].rank;
+                // var price = response.data.data[i].quotes.USD.price;
+                // var percent_change_1hr = response.data.data[i].quotes.USD.percent_change_1hr;
+                // var percent_change_7d = response.data.data[i].quotes.USD.percent_change_7d;
+                // var percent_change_24hr = response.data.data[i].quotes.USD.percent_change_24hr;
                 
-                var detailedCryptoInfo = {
-                    "name": name,
-                    "symbol": symbol,
-                    "rank": rank,
-                    "price": price,
-                    "percent_change_1hr": percent_change_1hr,
-                    "percent_change_7d": percent_change_7d,
-                    "percent_change_24hr": percent_change_24hr
-                }
-                cryptoData.cryptoInfo.push(detailedCryptoInfo);
+                // var detailedCryptoInfo = {
+                //     "name": name,
+                //     "symbol": symbol,
+                //     "rank": rank,
+                //     "price": price,
+                //     "percent_change_1hr": percent_change_1hr,
+                //     "percent_change_7d": percent_change_7d,
+                //     "percent_change_24hr": percent_change_24hr
+                // }
+                // cryptoData.cryptoInfo.push(detailedCryptoInfo);
             }
-            localStorage.setItem("cryptoData", JSON.stringify(cryptoData));
+            // localStorage.setItem("cryptoData", JSON.stringify(cryptoData));
         })
         .catch(function (error) {
             console.log(error);
