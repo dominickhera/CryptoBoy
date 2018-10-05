@@ -95,12 +95,12 @@ class App extends Component {
           </tr>
         </thead>
         <tbody>
-        {/* <tr> */}
-            {/* <th scope="row">ddd</th>
+        <tr>
+            <th scope="row">ddd</th>
             <td>d</td>
             <td>$</td>
-          </tr> */}
-          { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)}
+          </tr>
+          {/* { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)} */}
         </tbody>
       </Table>
                                 {/* </p> */}
