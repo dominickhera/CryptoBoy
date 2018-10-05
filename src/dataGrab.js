@@ -7,7 +7,8 @@ export function getCryptoRankings() {
             console.log(response.data.data);
             var cryptoData = {};
             var cryptoInfo = [];
-            let listLength = response.data.data.length;
+            let listLength = response.data.length;
+            console.log("length of list is " + listLength);
             // var shitWorkAround = [1,2,52,328,512,825,1027,1765,1831,2010];
             cryptoData.cryptoInfo = cryptoInfo;
             var i;
@@ -45,15 +46,15 @@ export function getCryptoRankings() {
     const {name, symbol, price, rank, percent_change_1h, percent_change_24h, percent_change_7d } = crypto;
     console.log(crypto);
     return (
-        { title: {name}, url: {symbol} }
+        { title: {name} , url: 'https://google.com'}
     );
   }
 
   export function getSearchResults() {
-    return [
-        { title: 'Dropbox', url: 'https://dropbox.com' },
-        { title: 'GitHub', url: 'https://google.com' },
-        { title: 'Facebook', url: 'https://facebook.com' },
-      ];
-    // return [(JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)]
+    // return [
+        // { title: 'Dropbox', url: 'https://dropbox.com' },
+        // { title: 'GitHub', url: 'https://google.com' },
+        // { title: 'Facebook', url: 'https://facebook.com' },
+    //   ];
+    return [(JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)];
   }
