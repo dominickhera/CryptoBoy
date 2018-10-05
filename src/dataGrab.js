@@ -50,5 +50,10 @@ export function getCryptoRankings() {
   }
 
   export function getSearchResults() {
-    return [(JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)]
+    return [
+        { title: 'Dropbox', url: 'https://dropbox.com' },
+        { title: 'GitHub', url: 'https://google.com' },
+        { title: 'Facebook', url: 'https://facebook.com' },
+      ];
+    // return [(JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)]
   }
