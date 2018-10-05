@@ -44,7 +44,7 @@ class App extends Component {
       console.log(crypto);
       return (
           <tr>
-            <th scope="row">{i}</th>
+            <th scope="row">{i + 1}</th>
             <td>{name} ({symbol})</td>
             <td>${price} / {symbol}</td>
           </tr>
@@ -90,7 +90,7 @@ class App extends Component {
           <tr>
             <th>Rank</th>
             <th>Cryptocurrency</th>
-            <th>Exchange Rate(USD$)</th>
+            <th>Exchange Rate (USD$)</th>
             {/* <th>Username</th> */}
           </tr>
         </thead>
