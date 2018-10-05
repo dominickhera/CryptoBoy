@@ -62,7 +62,7 @@ export function getCryptoRankings() {
 
  
 export function SearchExtension(query) {
-        return fetch(`https://api.coinmarketcap.com/v2/ticker/' + ${query} + '/?structure=array`)
+        return fetch(`https://api.coinmarketcap.com/v2/ticker/'${query}'/?structure=array`)
             .then(resp => resp.items.map(item => ({
                 title: item.name,
                 symbol: item.symbol,
