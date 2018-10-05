@@ -47,9 +47,9 @@ class App extends Component {
             <th scope="row">{rank}</th>
             <td>{name} ({symbol})</td>
             <td>${price} / {symbol}</td>
-            <td>{percent_change_1hr} %%</td>
-            <td>{percent_change_24hr} %%</td>
-            <td>{percent_change_7d} %%</td>
+            <td>{percent_change_1hr}%</td>
+            <td>{percent_change_24hr}%</td>
+            <td>{percent_change_7d}%</td>
           </tr>
       );
     }

@@ -26,9 +26,9 @@ export function getCryptoRankings() {
                     "symbol": symbol,
                     "rank": rank,
                     "price": price,
-                    "percent_change_1hr": percent_change_1hr,
+                    "percent_change_1h": percent_change_1hr,
                     "percent_change_7d": percent_change_7d,
-                    "percent_change_24hr": percent_change_24hr
+                    "percent_change_24h": percent_change_24hr
                 }
                 cryptoData.cryptoInfo.push(detailedCryptoInfo);
             }
