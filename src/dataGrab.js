@@ -10,8 +10,8 @@ export function getCryptoRankings() {
             cryptoData.cryptoInfo = cryptoInfo;
             var i;
             // for(i = 0; i < 10; i++) {
-            for(item in response.data.data) {
-                console.log(item);
+            for(object in response.data.data) {
+                console.log(object);
                 // var name = response.data.data[i].name;
                 // var symbol = response.data.data[i].symbol;
                 // var rank = response.data.data[i].rank;
