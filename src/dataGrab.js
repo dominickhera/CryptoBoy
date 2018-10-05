@@ -32,7 +32,7 @@ export function getCryptoRankings() {
                 }
                 cryptoData.cryptoInfo.push(detailedCryptoInfo);
             }
-            console.log(cryptoData);
+            // console.log(cryptoData);
             localStorage.setItem("cryptoData", JSON.stringify(cryptoData));
         })
         .catch(function (error) {
