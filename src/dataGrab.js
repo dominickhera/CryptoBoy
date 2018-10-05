@@ -17,9 +17,9 @@ export function getCryptoRankings() {
                 var symbol = response.data.data[shitWorkAround[i]].symbol;
                 var rank = response.data.data[shitWorkAround[i]].rank;
                 var price = response.data.data[shitWorkAround[i]].quotes.USD.price;
-                var percent_change_1hr = response.data.data[shitWorkAround[i]].quotes.USD.percent_change_1hr;
+                var percent_change_1hr = response.data.data[shitWorkAround[i]].quotes.USD.percent_change_1h;
                 var percent_change_7d = response.data.data[shitWorkAround[i]].quotes.USD.percent_change_7d;
-                var percent_change_24hr = response.data.data[shitWorkAround[i]].quotes.USD.percent_change_24hr;
+                var percent_change_24hr = response.data.data[shitWorkAround[i]].quotes.USD.percent_change_24h;
                 
                 var detailedCryptoInfo = {
                     "name": name,
