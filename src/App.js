@@ -40,7 +40,7 @@ class App extends Component {
     }
 
     _renderTableRow(crypto, i) {
-      const {name, symbol, price, rank, percent_change_1hr, percent_change_24hr, percent_change_7d } = crypto;
+      const {name, symbol, price, rank, percent_change_1h, percent_change_24h, percent_change_7d } = crypto;
       console.log(crypto);
       return (
           <tr>
