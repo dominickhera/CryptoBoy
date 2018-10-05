@@ -100,11 +100,11 @@ class App extends Component {
           </tr>
         </thead>
         <tbody>
-        {/* <tr> */}
-            {/* <th scope="row">ddd</th>
-            <td>d</td>
-            <td>$</td>
-          </tr> */}
+         <tr> 
+             <th scope="row"></th>
+            <td></td>
+            <td></td>
+          </tr>
           { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)}
         </tbody>
       </Table>
