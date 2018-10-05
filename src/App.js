@@ -43,10 +43,12 @@ class App extends Component {
       const {name, symbol, price, rank, percent_change_1hr, percent_change_24hr, percent_change_7d } = crypto;
       console.log(crypto);
       return (
-          <tr>
-            <th scope="row">{rank}</th>
+          // <tr>
+          <tr class="gradeA odd" role="row">  
+            {/* <th scope="row">{rank}</th> */}
+            <td class="sorting_1">{rank}</td>
             <td>{name} ({symbol})</td>
-            <td>${price} / {symbol}</td>
+            <td>${price}</td>
           </tr>
       );
     }
@@ -85,25 +87,23 @@ class App extends Component {
                                     </Button>
                                 </p> */}
 
-                                  <table id="table_id" class="display">
-        <thead> 
-          <tr>
-            <th>Rank</th>
-            <th>Cryptocurrency</th>
-            <th>Exchange Rate (USD$)</th>
-            {/* <th>Username</th> */}
-          </tr>
-        </thead>
-        <tbody>
-        {/* <tr> */}
-            {/* <th scope="row">ddd</th>
-            <td>d</td>
-            <td>$</td>
-          </tr> */}
-          { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)}
-        </tbody>
-      </table>
-      <canvas class="flot-overlay" width="994" height="800" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 497px; height: 400px;"></canvas>
+                                 <table width="100%" class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info" style="width: 100%;">
+                                <thead>
+                                    <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Ranking: activate to sort column descending" style="width: 69px;">Ranking</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Cryptocurrency: activate to sort column ascending" style="width: 80px;">Cryptocurrency</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Exchange Rate (USD$): activate to sort column ascending" style="width: 75px;">Exchange Rate (USD$)</th></tr>
+                                </thead>
+                                <tbody>
+
+                                {/* <tr class="gradeA odd" role="row">  
+                                        <td class="sorting_1">Gecko</td>
+                                        <td>Firefox 1.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td class="center">1.7</td>
+                                        <td class="center">A</td>
+                                    </tr>  */}
+                                    { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)}
+                                    </tbody>
+                            </table>
+      
                                 {/* </p> */}
                             </Col>
                         </Row>
@@ -117,3 +117,4 @@ class App extends Component {
 
 
 export default App;
+
