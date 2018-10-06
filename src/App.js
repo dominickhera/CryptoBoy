@@ -53,33 +53,6 @@ class App extends Component {
           </tr>
       );
     }
-
-    _renderResult(crypto, i) {
-      const {name, symbol, price, rank, percent_change_1h, percent_change_24h, percent_change_7d } = crypto;
-      console.log(crypto);
-      return (
-        <div>
-          <a>{name}</a>
-        </div>
-          // <tr>
-            // <th scope="row">{rank}</th>
-            // <td>{name} ({symbol})</td>
-            // <td>${price}</td>
-            // <td>{percent_change_1h}%</td>
-            // <td>{percent_change_24h}%</td>
-            // <td>{percent_change_7d}%</td>
-          // </tr>
-      );
-    }
-
-    // function ResultItem({ item }) {
-    //   return (
-    //     <div>
-    //       <img src={item.owner.avatar_url} width={30} height={30} />
-    //       <a href={item.html_url}>{item.full_name}</a>
-    //     </div>
-    //   );
-    // }
     
     render() {
       const { data } = this.state;
@@ -88,81 +61,51 @@ class App extends Component {
                 <Navbar color="inverse" light expand="md">
                     <NavbarBrand href="/">Cypto Boy</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
-                    {/* <Collapse isOpen={this.state.isOpen} navbar> */}
-                        {/* <Nav className="ml-auto" navbar> */}
-                        
-                            {/* <NavItem>
-                                <NavLink href="/components/">Components</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
-                            </NavItem> */}
-                        {/* </Nav> */}
-                    {/* </Collapse> */}
                 </Navbar>
                 <Jumbotron>
                     <Container>
                         <Row>
                             <Col>
                                 <h1>Welcome to Crypto Boy</h1>
-                                <h3>Mady by Dominick Hera</h3>
-                                {/* <Omnibar placeholder="Enter Crypto Currency" extensions={[getSearchResults] }/> */}
-                                {/* <p>
-                                    <Button
-                                        tag="a"
-                                        color="success"
-                                        size="large"
-                                        href="http://reactstrap.github.io"
-                                        target="_blank"
-                                    >
-                                        View Reactstrap Docs
-                                    </Button>
-                                </p> */}
-<ReactTable
-          data={data}
-          columns={[
-            {
-              Header: "Name",
-              columns: [
-                {
-                  Header: "Rank",
-                  accessor: "rank"
-                },
-                {
-                  Header: "Name",
-                  id: "name",
-                  accessor: d => d.name
-                },
-              // ]
-            // },
-            // {
-              // Header: "Info",
-              // columns: [
-                {
-                  Header: "Exchange Rate (USD$)",
-                  accessor: "price"
-                },
-                {
-                  Header: "Percent Change (1 Hour)",
-                  accessor: "percent_change_1h"
-                }
-                ,
-                {
-                  Header: "Percent Change (24 Hours)",
-                  accessor: "percent_change_24h"
-                },
-                {
-                  Header: "Percent Change (7 Days)",
-                  accessor: "percent_change_7d"
-                }
-              ]
-            }
-          ]}
-          defaultPageSize={10}
-          className="-striped -highlight"
-        />
-
-      
+                                <h4>Mady by Dominick Hera</h4>
+                                <ReactTable
+                                          data={data}
+                                          columns={[
+                                            {
+                                              Header: "Data",
+                                              columns: [
+                                                {
+                                                  Header: "Rank",
+                                                  accessor: "rank"
+                                                },
+                                                {
+                                                  Header: "Name",
+                                                  id: "name",
+                                                  accessor: d => d.name
+                                                },
+                                                {
+                                                  Header: "Exchange Rate (USD$)",
+                                                  accessor: "price"
+                                                },
+                                                {
+                                                  Header: "Percent Change (1 Hour)",
+                                                  accessor: "percent_change_1h"
+                                                }
+                                                ,
+                                                {
+                                                  Header: "Percent Change (24 Hours)",
+                                                  accessor: "percent_change_24h"
+                                                },
+                                                {
+                                                  Header: "Percent Change (7 Days)",
+                                                  accessor: "percent_change_7d"
+                                                }
+                                              ]
+                                            }
+                                          ]}
+                                          defaultPageSize={10}
+                                          className="-striped -highlight"
+                                        />
                             </Col>
                         </Row>
                     </Container>

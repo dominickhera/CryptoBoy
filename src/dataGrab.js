@@ -35,43 +35,12 @@ export function getCryptoRankings() {
                 cryptoData.cryptoInfo.push(detailedCryptoInfo);
             }
             console.log(cryptoData);
-            return(JSON.stringify(cryptoData));
+            // return(JSON.stringify(cryptoData));
             localStorage.setItem("cryptoData", JSON.stringify(cryptoData));
         })
         .catch(function (error) {
             console.log(error);
         })
 
-        // return(cryptoData);
+        return(JSON.stringify(cryptoData));
   }
-
- export function renderArrayItem(crypto, i) {
-    const {name, symbol, price, rank, percent_change_1h, percent_change_24h, percent_change_7d } = crypto;
-    console.log(crypto);
-    return (
-        { title: {name} , url: 'https://google.com'}
-    );
-  }
-
-  export function getSearchResults() {
-    // this.getCryptoRankings();
-    // return [
-        // { title: 'Dropbox', url: 'https://dropbox.com' },
-        // { title: 'GitHub', url: 'https://google.com' },
-        // { title: 'Facebook', url: 'https://facebook.com' },
-    //   ];
-    return [JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo.map(item => ({
-        title: item.name,
-        symbol: item.symbol,
-    }))];
-  } 
-
-
- 
-export function SearchExtension(query) {
-        return fetch(`https://api.coinmarketcap.com/v2/ticker/${query}/?structure=array`)
-            .then(resp => resp.items.data.data.map(item => ({
-                title: item.data.data.name,
-                symbol: item.data.data.symbol,
-            })));   
-}   
