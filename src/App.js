@@ -106,7 +106,7 @@ class App extends Component {
                         <Row>
                             <Col>
                                 <h1>Welcome to Crypto Boy</h1>
-                                <Omnibar placeholder="Enter Crypto Currency" extensions={[getSearchResults] } render={this._renderResult}/>
+                                <Omnibar placeholder="Enter Crypto Currency" extensions={[getSearchResults] }/>
                                 {/* <p>
                                     <Button
                                         tag="a"
