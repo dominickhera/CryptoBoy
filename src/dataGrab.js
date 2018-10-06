@@ -51,7 +51,7 @@ export function getCryptoRankings() {
   }
 
   export function getSearchResults() {
-    this.getCryptoRankings();
+    // this.getCryptoRankings();
     // return [
         // { title: 'Dropbox', url: 'https://dropbox.com' },
         // { title: 'GitHub', url: 'https://google.com' },
