@@ -7,7 +7,7 @@ export function getCryptoRankings() {
             console.log(response.data.data);
             var cryptoData = {};
             var cryptoInfo = [];
-            let listLength = response.data.length;
+            let listLength = response.data.data.length;
             console.log("length of list is " + listLength);
             // var shitWorkAround = [1,2,52,328,512,825,1027,1765,1831,2010];
             cryptoData.cryptoInfo = cryptoInfo;
@@ -63,8 +63,8 @@ export function getCryptoRankings() {
  
 export function SearchExtension(query) {
         return fetch(`https://api.coinmarketcap.com/v2/ticker/${query}/?structure=array`)
-            .then(resp => resp.items.data.map(item => ({
-                title: item.data.name,
-                symbol: item.data.symbol,
+            .then(resp => resp.items.data.data.map(item => ({
+                title: item.data.data.name,
+                symbol: item.data.data.symbol,
             })));   
 }
