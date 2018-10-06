@@ -26,7 +26,7 @@ class App extends Component {
         this.toggle = this.toggle.bind(this);
         this.state = {
             isOpen: false,
-            data: JSON.parse(getCryptoRankings).cryptoInfo
+            data: (JSON.parse(getCryptoRankings)).cryptoInfo
         };
     }
     toggle() {
