@@ -79,7 +79,7 @@ class App extends Component {
                         <Row>
                             <Col>
                                 <h1>Welcome to Crypto Boy</h1>
-                                <Omnibar placeholder="Enter keyword" extensions={[SearchExtension] } />
+                                <Omnibar placeholder="Enter keyword" extensions={[getSearchResults] } />
                                 {/* <p>
                                     <Button
                                         tag="a"
@@ -109,7 +109,7 @@ class App extends Component {
             <td></td>
             <td></td>
           </tr>
-          {/* { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)} */}
+          { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)}
         </tbody>
       </Table>
                                 {/* </p> */}

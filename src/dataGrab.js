@@ -12,7 +12,7 @@ export function getCryptoRankings() {
             // var shitWorkAround = [1,2,52,328,512,825,1027,1765,1831,2010];
             cryptoData.cryptoInfo = cryptoInfo;
             var i;
-            for(i = 1; i < listLength; i++) {
+            for(i = 0; i < listLength; i++) {
             // for(object in response.data.data) {
                 // console.log(object);
                 var name = response.data.data[i].name;
