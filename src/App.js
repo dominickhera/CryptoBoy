@@ -149,16 +149,16 @@ class App extends Component {
                 },
                 {
                   Header: "Price Change (1 Hour)",
-                  accessor: "price_change_1h"
+                  accessor: "percent_change_1h"
                 }
                 ,
                 {
                   Header: "Price Change (24 Hours)",
-                  accessor: "price_change_24h"
+                  accessor: "percent_change_24h"
                 },
                 {
                   Header: "Price Change (7 Days)",
-                  accessor: "price_change_7d"
+                  accessor: "percent_change_7d"
                 }
               ]
             }
