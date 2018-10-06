@@ -4,26 +4,19 @@ import Omnibar from 'omnibar';
 // import Foo from './Foo';
 // import Bar from './Bar';
 import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    Container,
-    Row,
-    Col,
-    Jumbotron,
-    Button,
-    Table,
-    Dropdown, 
-    DropdownToggle, 
-    DropdownMenu, 
-    DropdownItem
-} from 'reactstrap';
+    Collapse, Card, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Container, Row, Col, Jumbotron, Button, Table, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import ReactTable from "react-table";
 import "react-table/react-table.css";
+import {
+  Chart,
+  ArgumentAxis,
+  ValueAxis,
+  ArgumentGrid,
+  BarSeries,
+  LineSeries,
+  Legend,
+} from '@devexpress/dx-react-chart-bootstrap4';
+import { Scale } from '@devexpress/dx-react-chart';
 
 class App extends Component {
     constructor(props) {
@@ -166,6 +159,15 @@ class App extends Component {
           defaultPageSize={10}
           className="-striped -highlight"
         />
+
+        <Chart
+      data={data}
+    >
+      <ArgumentAxis />
+      <ValueAxis />
+      <ScatterSeries valueField="price" argumentField="name" />
+      <Scale />
+    </Chart>
                                   {/* <Table hover>
         <thead> 
           <tr>
