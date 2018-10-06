@@ -161,35 +161,7 @@ class App extends Component {
           className="-striped -highlight"
         />
 
-        <Chart
-      data={data}
-    >
-      <ArgumentAxis />
-      <ValueAxis />
-      <LineSeries valueField="price" argumentField="name" />
-      <Scale />
-    </Chart>
-                                  {/* <Table hover>
-        <thead> 
-          <tr>
-            <th>Rank</th>
-            <th>Cryptocurrency</th>
-            <th>Exchange Rate (USD$)</th>
-            <th>Price Change (1 Hour)</th>
-            <th>Price Change (24 Hours)</th>
-            <th>Price Change (7 Days)</th>
-          </tr>
-        </thead>
-        <tbody>
-         <tr>
-             <th scope="row"></th>
-            <td></td>
-            <td></td>
-          </tr>
-          { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)}
-        </tbody>
-      </Table> */}
-                                {/* </p> */}
+      
                             </Col>
                         </Row>
                     </Container>
