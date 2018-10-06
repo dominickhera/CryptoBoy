@@ -96,6 +96,8 @@ class App extends Component {
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
+                        <h1>Welcome to Crypto Boy</h1>
+                                <Omnibar placeholder="Enter Crypto Currency" extensions={[getSearchResults] }/>
                         <ReactTable
           data={data}
           columns={[
@@ -152,8 +154,8 @@ class App extends Component {
                     <Container>
                         <Row>
                             <Col>
-                                <h1>Welcome to Crypto Boy</h1>
-                                <Omnibar placeholder="Enter Crypto Currency" extensions={[getSearchResults] }/>
+                                {/* <h1>Welcome to Crypto Boy</h1>
+                                <Omnibar placeholder="Enter Crypto Currency" extensions={[getSearchResults] }/> */}
                                 {/* <p>
                                     <Button
                                         tag="a"
@@ -166,7 +168,7 @@ class App extends Component {
                                     </Button>
                                 </p> */}
 
-                                  <Table hover>
+                                  {/* <Table hover>
         <thead> 
           <tr>
             <th>Rank</th>
@@ -185,7 +187,7 @@ class App extends Component {
           </tr>
           { (JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this._renderTableRow)}
         </tbody>
-      </Table>
+      </Table> */}
                                 {/* </p> */}
                             </Col>
                         </Row>
