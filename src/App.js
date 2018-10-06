@@ -17,12 +17,12 @@ import {
   LineSeries,
   Legend,
 } from '@devexpress/dx-react-chart-bootstrap4';
-import { Scale } from '@devexpress/dx-react-chart';
+// import { Scale } from '@devexpress/dx-react-chart';
 
 class App extends Component {
     constructor(props) {
         super(props);
-        
+        getCryptoRankings(); 
         this.toggle = this.toggle.bind(this);
         this.state = {
             isOpen: false,
