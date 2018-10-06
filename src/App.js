@@ -1,23 +1,11 @@
 import React, { Component } from 'react';
 import { getCryptoRankings, getSearchResults, SearchExtension } from './dataGrab';
-import Omnibar from 'omnibar';
-// import Foo from './Foo';
-// import Bar from './Bar';
+
 import {
     Collapse, Card, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Container, Row, Col, Jumbotron, Button, Table, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import ReactTable from "react-table";
 import "react-table/react-table.css";
-import {
-  Chart,
-  ArgumentAxis,
-  ValueAxis,
-  ScatterSeries,
-  ArgumentGrid,
-  BarSeries,
-  LineSeries,
-  Legend,
-} from '@devexpress/dx-react-chart-bootstrap4';
-// import { Scale } from '@devexpress/dx-react-chart';
+
 
 class App extends Component {
     constructor(props) {
@@ -26,7 +14,7 @@ class App extends Component {
         this.toggle = this.toggle.bind(this);
         this.state = {
             isOpen: false,
-            data: (JSON.parse(getCryptoRankings)).cryptoInfo
+            data: JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo
         };
     }
     toggle() {
@@ -35,25 +23,10 @@ class App extends Component {
         });
     }
 
-    // componentDidMount() {
-      // getCryptoRankings(); s
-    // }
-
-    _renderTableRow(crypto, i) {
-      const {name, symbol, price, rank, percent_change_1h, percent_change_24h, percent_change_7d } = crypto;
-      console.log(crypto);
-      return (
-          <tr>
-            <th scope="row">{rank}</th>
-            <td>{name} ({symbol})</td>
-            <td>${price}</td>
-            <td>{percent_change_1h}%</td>
-            <td>{percent_change_24h}%</td>
-            <td>{percent_change_7d}%</td>
-          </tr>
-      );
+    componentDidMount() {
+      getCryptoRankings();
     }
-    
+
     render() {
       const { data } = this.state;
         return (

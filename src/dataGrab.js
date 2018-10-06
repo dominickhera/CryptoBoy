@@ -8,13 +8,9 @@ export function getCryptoRankings() {
             var cryptoData = {};
             var cryptoInfo = [];
             let listLength = response.data.data.length;
-            console.log("length of list is " + listLength);
-            // var shitWorkAround = [1,2,52,328,512,825,1027,1765,1831,2010];
             cryptoData.cryptoInfo = cryptoInfo;
             var i;
             for(i = 0; i < listLength; i++) {
-            // for(object in response.data.data) {
-                // console.log(object);
                 var name = response.data.data[i].name;
                 var symbol = response.data.data[i].symbol;
                 var rank = response.data.data[i].rank;
@@ -34,13 +30,9 @@ export function getCryptoRankings() {
                 }
                 cryptoData.cryptoInfo.push(detailedCryptoInfo);
             }
-            console.log(cryptoData);
-            return(JSON.stringify(cryptoData));
             localStorage.setItem("cryptoData", JSON.stringify(cryptoData));
         })
         .catch(function (error) {
             console.log(error);
         })
-
-        // return(JSON.stringify(cryptoData));
   }
