@@ -2,12 +2,12 @@ const request = require('axios');
 
 export function getCryptoRankings() {
         request
-        .get('https://api.coinmarketcap.com/v2/ticker/?sort=id', {crossdomain: true})
+        .get('https://api.coinmarketcap.com/v2/ticker/?sort=id&structure=array', {crossdomain: true})
         .then(function (response) {
             console.log(response.data.data);
             var cryptoData = {};
             var cryptoInfo = [];
-            let listLength = response.length;
+            let listLength = response.data.length;
             console.log("length of list is " + listLength);
             // var shitWorkAround = [1,2,52,328,512,825,1027,1765,1831,2010];
             cryptoData.cryptoInfo = cryptoInfo;
