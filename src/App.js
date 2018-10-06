@@ -22,14 +22,17 @@ import {
     DropdownMenu, 
     DropdownItem
 } from 'reactstrap';
+import ReactTable from "react-table";
+import "react-table/react-table.css";
 
 class App extends Component {
     constructor(props) {
         super(props);
-        getCryptoRankings();
+        
         this.toggle = this.toggle.bind(this);
         this.state = {
-            isOpen: false
+            isOpen: false,
+            data: JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo
         };
     }
     toggle() {
@@ -85,6 +88,7 @@ class App extends Component {
     // }
     
     render() {
+      const { data } = this.state;
         return (
             <div>
                 <Navbar color="inverse" light expand="md">
@@ -92,6 +96,49 @@ class App extends Component {
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
+                        <ReactTable
+          data={data}
+          columns={[
+            {
+              Header: "Name",
+              columns: [
+                {
+                  Header: "Rank",
+                  accessor: "rank"
+                },
+                {
+                  Header: "Name",
+                  id: "name",
+                  accessor: d => d.name
+                }
+              ]
+            },
+            {
+              Header: "Info",
+              columns: [
+                {
+                  Header: "Exchange Rate (USD$)",
+                  accessor: "price"
+                },
+                {
+                  Header: "Price Change (1 Hour)",
+                  accessor: "price_change_1h"
+                }
+                ,
+                {
+                  Header: "Price Change (24 Hours)",
+                  accessor: "price_change_24h"
+                },
+                {
+                  Header: "Price Change (7 Days)",
+                  accessor: "price_change_7d"
+                }
+              ]
+            }
+          ]}
+          defaultPageSize={10}
+          className="-striped -highlight"
+        />
                             {/* <NavItem>
                                 <NavLink href="/components/">Components</NavLink>
                             </NavItem>
