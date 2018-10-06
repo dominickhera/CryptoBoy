@@ -35,12 +35,12 @@ export function getCryptoRankings() {
                 cryptoData.cryptoInfo.push(detailedCryptoInfo);
             }
             console.log(cryptoData);
-            // return(JSON.stringify(cryptoData));
+            return(JSON.stringify(cryptoData));
             localStorage.setItem("cryptoData", JSON.stringify(cryptoData));
         })
         .catch(function (error) {
             console.log(error);
         })
 
-        return(JSON.stringify(cryptoData));
+        // return(JSON.stringify(cryptoData));
   }
