@@ -131,12 +131,12 @@ class App extends Component {
                   Header: "Name",
                   id: "name",
                   accessor: d => d.name
-                }
-              ]
-            },
-            {
-              Header: "Info",
-              columns: [
+                },
+              // ]
+            // },
+            // {
+              // Header: "Info",
+              // columns: [
                 {
                   Header: "Exchange Rate (USD$)",
                   accessor: "price"
