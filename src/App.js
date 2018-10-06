@@ -166,7 +166,7 @@ class App extends Component {
     >
       <ArgumentAxis />
       <ValueAxis />
-      <ScatterSeries valueField="price" argumentField="name" />
+      <LineSeries valueField="price" argumentField="name" />
       <Scale />
     </Chart>
                                   {/* <Table hover>
