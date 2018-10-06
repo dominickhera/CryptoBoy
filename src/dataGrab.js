@@ -57,7 +57,7 @@ export function getCryptoRankings() {
         // { title: 'GitHub', url: 'https://google.com' },
         // { title: 'Facebook', url: 'https://facebook.com' },
     //   ];
-    return [(JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo).map(this.renderArrayItem)];
+    return [JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo];
   } 
 
 

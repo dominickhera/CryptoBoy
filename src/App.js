@@ -49,13 +49,40 @@ class App extends Component {
           <tr>
             <th scope="row">{rank}</th>
             <td>{name} ({symbol})</td>
-            <td>${price} / {symbol}</td>
+            <td>${price}</td>
             <td>{percent_change_1h}%</td>
             <td>{percent_change_24h}%</td>
             <td>{percent_change_7d}%</td>
           </tr>
       );
     }
+
+    _renderResult(crypto, i) {
+      const {name, symbol, price, rank, percent_change_1h, percent_change_24h, percent_change_7d } = crypto;
+      console.log(crypto);
+      return (
+        <div>
+          <a>{name}</a>
+        </div>
+          // <tr>
+            // <th scope="row">{rank}</th>
+            // <td>{name} ({symbol})</td>
+            // <td>${price}</td>
+            // <td>{percent_change_1h}%</td>
+            // <td>{percent_change_24h}%</td>
+            // <td>{percent_change_7d}%</td>
+          // </tr>
+      );
+    }
+
+    // function ResultItem({ item }) {
+    //   return (
+    //     <div>
+    //       <img src={item.owner.avatar_url} width={30} height={30} />
+    //       <a href={item.html_url}>{item.full_name}</a>
+    //     </div>
+    //   );
+    // }
     
     render() {
         return (
@@ -79,7 +106,7 @@ class App extends Component {
                         <Row>
                             <Col>
                                 <h1>Welcome to Crypto Boy</h1>
-                                <Omnibar placeholder="Enter keyword" extensions={[getSearchResults] } />
+                                <Omnibar placeholder="Enter Crypto Currency" extensions={[getSearchResults] } render={this._renderResult}/>
                                 {/* <p>
                                     <Button
                                         tag="a"
