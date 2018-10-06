@@ -11,6 +11,7 @@ import {
   Chart,
   ArgumentAxis,
   ValueAxis,
+  ScatterSeries,
   ArgumentGrid,
   BarSeries,
   LineSeries,
