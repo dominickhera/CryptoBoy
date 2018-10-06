@@ -94,11 +94,36 @@ class App extends Component {
                 <Navbar color="inverse" light expand="md">
                     <NavbarBrand href="/">Cypto Boy</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
-                    <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
-                        <h1>Welcome to Crypto Boy</h1>
+                    {/* <Collapse isOpen={this.state.isOpen} navbar> */}
+                        {/* <Nav className="ml-auto" navbar> */}
+                        
+                            {/* <NavItem>
+                                <NavLink href="/components/">Components</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
+                            </NavItem> */}
+                        {/* </Nav> */}
+                    {/* </Collapse> */}
+                </Navbar>
+                <Jumbotron>
+                    <Container>
+                        <Row>
+                            <Col>
+                                <h1>Welcome to Crypto Boy</h1>
                                 <Omnibar placeholder="Enter Crypto Currency" extensions={[getSearchResults] }/>
-                        <ReactTable
+                                {/* <p>
+                                    <Button
+                                        tag="a"
+                                        color="success"
+                                        size="large"
+                                        href="http://reactstrap.github.io"
+                                        target="_blank"
+                                    >
+                                        View Reactstrap Docs
+                                    </Button>
+                                </p> */}
+<ReactTable
           data={data}
           columns={[
             {
@@ -141,33 +166,6 @@ class App extends Component {
           defaultPageSize={10}
           className="-striped -highlight"
         />
-                            {/* <NavItem>
-                                <NavLink href="/components/">Components</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
-                            </NavItem> */}
-                        </Nav>
-                    </Collapse>
-                </Navbar>
-                <Jumbotron>
-                    <Container>
-                        <Row>
-                            <Col>
-                                {/* <h1>Welcome to Crypto Boy</h1>
-                                <Omnibar placeholder="Enter Crypto Currency" extensions={[getSearchResults] }/> */}
-                                {/* <p>
-                                    <Button
-                                        tag="a"
-                                        color="success"
-                                        size="large"
-                                        href="http://reactstrap.github.io"
-                                        target="_blank"
-                                    >
-                                        View Reactstrap Docs
-                                    </Button>
-                                </p> */}
-
                                   {/* <Table hover>
         <thead> 
           <tr>
