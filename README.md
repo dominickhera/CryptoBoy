@@ -1,5 +1,5 @@
 ## Crypto Boy 
 
-#Cryptocurrency Data reference site by dominick hera
+# Cryptocurrency Data reference site by dominick hera
 
-# www.cryptoboydata.herokuapp.com
+- https://cryptoboydata.herokuapp.com
