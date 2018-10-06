@@ -22,11 +22,11 @@ import {
 class App extends Component {
     constructor(props) {
         super(props);
-        getCryptoRankings(); 
+        // getCryptoRankings(); 
         this.toggle = this.toggle.bind(this);
         this.state = {
             isOpen: false,
-            data: JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo
+            data: JSON.parse(getCryptoRankings).cryptoInfo
         };
     }
     toggle() {
@@ -35,9 +35,9 @@ class App extends Component {
         });
     }
 
-    componentDidMount() {
-      getCryptoRankings(); 
-    }
+    // componentDidMount() {
+      // getCryptoRankings(); s
+    // }
 
     _renderTableRow(crypto, i) {
       const {name, symbol, price, rank, percent_change_1h, percent_change_24h, percent_change_7d } = crypto;
