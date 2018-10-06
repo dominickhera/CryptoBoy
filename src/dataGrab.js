@@ -35,11 +35,14 @@ export function getCryptoRankings() {
                 cryptoData.cryptoInfo.push(detailedCryptoInfo);
             }
             console.log(cryptoData);
+            return(cryptoData);
             localStorage.setItem("cryptoData", JSON.stringify(cryptoData));
         })
         .catch(function (error) {
             console.log(error);
         })
+
+        // return(cryptoData);
   }
 
  export function renderArrayItem(crypto, i) {
