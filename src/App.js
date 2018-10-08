@@ -28,7 +28,7 @@ class App extends Component {
     }
 
     render() {
-      const { data } = this.state;
+      const { data } = this.state.data;
         return (
             <div>
                 <Navbar color="inverse" light expand="md">
