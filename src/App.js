@@ -67,10 +67,11 @@ class App extends Component {
           }
           console.log("crypto data is " + cryptoData);
           // return cryptoData;
-          this.setState({
-            data: cryptoData.cryptoInfo
-          })
+          // this.setState({
+          //   data: cryptoData.cryptoInfo
+          // })
           localStorage.setItem("cryptoData", JSON.stringify(cryptoData));
+          return cryptoData;
       })
       .catch(function (error) {
           console.log(error);
@@ -78,7 +79,8 @@ class App extends Component {
 }
 
     componentDidMount() {
-      this.getCryptoData();
+      let tempIdea = this.getCryptoData();
+      console.log("crptodata out of function is " + tempIdea);
       // this.getCryptoRankings()
       // .then((data) => {
       //   // console.log('This happens 7th.');
