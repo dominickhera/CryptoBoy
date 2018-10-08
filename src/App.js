@@ -14,7 +14,7 @@ class App extends Component {
         this.toggle = this.toggle.bind(this);
         this.state = {
             isOpen: false,
-            data: JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo
+            data: null
         };
     }
     toggle() {
@@ -25,6 +25,9 @@ class App extends Component {
 
     componentWillMount() {
       getCryptoRankings();
+      this.setState({
+        data: JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo
+      });
     }
 
     render() {
