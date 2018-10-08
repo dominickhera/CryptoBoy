@@ -10,7 +10,7 @@ import "react-table/react-table.css";
 class App extends Component {
     constructor(props) {
         super(props);
-        // getCryptoRankings(); 
+        getCryptoRankings(); 
         this.toggle = this.toggle.bind(this);
         this.dataPull = this.dataPull.bind(this);
         this.state = {
@@ -25,7 +25,8 @@ class App extends Component {
 
     }
     dataPull() {
-      getCryptoRankings(); 
+      console.log("hello im being called");
+      // getCryptoRankings(); 
       this.setState({
         data: JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo
       });
