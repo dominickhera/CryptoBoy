@@ -19,6 +19,7 @@ class App extends Component {
         };
     }
     toggle() {
+      console.log("toggle bbbb");
         this.setState({
             isOpen: !this.state.isOpen
         });

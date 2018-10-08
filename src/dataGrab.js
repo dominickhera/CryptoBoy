@@ -8,6 +8,7 @@ export function getCryptoRankings() {
             var cryptoData = {};
             var cryptoInfo = [];
             let listLength = response.data.data.length;
+
             cryptoData.cryptoInfo = cryptoInfo;
             var i;
             for(i = 0; i < listLength; i++) {
