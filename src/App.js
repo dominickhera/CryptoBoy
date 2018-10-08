@@ -14,7 +14,7 @@ class App extends Component {
         this.toggle = this.toggle.bind(this);
         this.state = {
             isOpen: false,
-            data: null
+            data: getCryptoRankings()
         };
     }
     toggle() {
@@ -24,14 +24,14 @@ class App extends Component {
     }
 
     componentWillMount() {
-      getCryptoRankings();
+      // getCryptoRankings();
       this.setState({
         data: JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo
       });
     }
 
     render() {
-      const { data } = this.state;
+      const { data } = getCryptoRankings();
         return (
             <div>
                 <Navbar color="inverse" light expand="md">
