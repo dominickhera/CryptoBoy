@@ -4,7 +4,7 @@ export function getCryptoRankings() {
         request
         .get('https://api.coinmarketcap.com/v2/ticker/?sort=rank&structure=array', {crossdomain: true})
         .then(function (response) {
-            console.log(response.data.data);
+            // console.log(response.data.data);
             var cryptoData = {};
             var cryptoInfo = [];
             let listLength = response.data.data.length;
@@ -31,6 +31,8 @@ export function getCryptoRankings() {
                 }
                 cryptoData.cryptoInfo.push(detailedCryptoInfo);
             }
+            console.log("crypto data is " + cryptoData);
+            return cryptoData;
             localStorage.setItem("cryptoData", JSON.stringify(cryptoData));
         })
         .catch(function (error) {

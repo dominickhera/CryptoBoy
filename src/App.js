@@ -10,9 +10,9 @@ import "react-table/react-table.css";
 class App extends Component {
     constructor(props) {
         super(props);
-        getCryptoRankings(); 
+        // getCryptoRankings(); 
         this.toggle = this.toggle.bind(this);
-        this.dataPull = this.dataPull.bind(this);
+        // this.dataPull = this.dataPull.bind(this);
         this.state = {
             isOpen: false,
             data: []
@@ -33,9 +33,15 @@ class App extends Component {
       });
     }
 
-    // componentWillMount() {
-      // getCryptoRankings();
-    // }
+    componentDidMount() {
+      getCryptoRankings()
+      .then((data) => {
+        console.log('This happens 7th.');
+        this.setState({
+          data: data.cryptoInfo
+        });
+      });
+    }
 
     render() {
       const { data } = this.state;
