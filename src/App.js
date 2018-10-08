@@ -12,26 +12,31 @@ class App extends Component {
         super(props);
         // getCryptoRankings(); 
         this.toggle = this.toggle.bind(this);
+        this.dataPull = this.dataPull.bind(this);
         this.state = {
             isOpen: false,
-            data: getCryptoRankings()
+            data: JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo
         };
     }
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen
         });
+        
     }
-
-    componentWillMount() {
-      // getCryptoRankings();
+    dataPull() {
+      getCryptoRankings(); 
       this.setState({
         data: JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo
       });
     }
 
+    // componentWillMount() {
+      // getCryptoRankings();
+    // }
+
     render() {
-      const { data } = getCryptoRankings();
+      const { data } = this.state;
         return (
             <div>
                 <Navbar color="inverse" light expand="md">
