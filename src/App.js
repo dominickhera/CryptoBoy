@@ -23,12 +23,12 @@ class App extends Component {
         });
     }
 
-    componentDidMount() {
+    componentWillMount() {
       getCryptoRankings();
     }
 
     render() {
-      const { data } = this.state.data;
+      const { data } = this.state;
         return (
             <div>
                 <Navbar color="inverse" light expand="md">
