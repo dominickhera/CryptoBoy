@@ -72,7 +72,7 @@ class App extends Component {
           // })
           localStorage.setItem("cryptoData", JSON.stringify(cryptoData));
           // return cryptoData;
-          this.dataPull()
+          // this.dataPull()
       })
       .catch(function (error) {
           console.log(error);
@@ -82,6 +82,9 @@ class App extends Component {
     componentDidMount() {
       // let tempIdea = 
       this.getCryptoData();
+      this.setState({
+        data: JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo
+      });
       // console.log("crptodata out of function is " + tempIdea);
       // this.getCryptoRankings()
       // .then((data) => {
