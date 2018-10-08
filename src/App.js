@@ -15,14 +15,14 @@ class App extends Component {
         this.dataPull = this.dataPull.bind(this);
         this.state = {
             isOpen: false,
-            data: JSON.parse(localStorage.getItem("cryptoData")).cryptoInfo
+            data: []
         };
     }
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen
         });
-        
+
     }
     dataPull() {
       getCryptoRankings(); 
