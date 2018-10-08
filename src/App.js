@@ -36,7 +36,7 @@ class App extends Component {
     componentDidMount() {
       getCryptoRankings()
       .then((data) => {
-        console.log('This happens 7th.');
+        // console.log('This happens 7th.');
         this.setState({
           data: data.cryptoInfo
         });
