@@ -80,7 +80,8 @@ class App extends Component {
 }
 
     componentDidMount() {
-      // let tempIdea = this.getCryptoData();
+      // let tempIdea = 
+      this.getCryptoData();
       // console.log("crptodata out of function is " + tempIdea);
       // this.getCryptoRankings()
       // .then((data) => {
