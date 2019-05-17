@@ -100,7 +100,7 @@ class App extends Component {
         return (
             <div>
                 <Navbar color="inverse" light expand="md">
-                    <NavbarBrand href="/">Cypto Boy</NavbarBrand>
+                    <NavbarBrand href="/">Crypto Boy</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                 </Navbar>
                 <Jumbotron>
@@ -108,7 +108,7 @@ class App extends Component {
                         <Row>
                             <Col>
                                 <h1>Welcome to Crypto Boy</h1>
-                                <h4>Mady by Dominick Hera</h4>
+                                <h4>Made by Dominick Hera</h4>
                                 <ReactTable
                                           data={data}
                                           columns={[
